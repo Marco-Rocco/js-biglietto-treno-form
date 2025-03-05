@@ -12,7 +12,10 @@ console.log(infoSub);
 
 
 infoSub.addEventListener('click', function(){
-
+    console.log('click');
+    
+    console.log(age.value)
+    console.log(km.value);
 });
 
 
