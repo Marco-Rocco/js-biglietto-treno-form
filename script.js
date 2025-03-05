@@ -11,7 +11,9 @@ console.log(infoSub);
 
 
 
-infoSub.addEventListener('click', function(){
+infoSub.addEventListener('click', function(event){
+    event.preventDefault;
+    
     console.log('click');
     
     console.log(age.value)
