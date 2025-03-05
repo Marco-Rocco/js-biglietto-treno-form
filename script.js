@@ -15,10 +15,9 @@ const totalDisplay = document.getElementById('total-display')
 infoSub.addEventListener('click', function(event){
     event.preventDefault();
 
-    while (isNaN(age.value) || isNaN(km.value) || age.value < 1 || age.value > 120) {
+    if (isNaN(age.value) || isNaN(km.value) || age.value < 1 || age.value > 120) {
     alert("uno dei dati non è valido, refresha la pagina e inserisci dei dati validi");
-    location.reload;
-    }
+    } else {
 
     console.log('click');
     
@@ -38,12 +37,12 @@ infoSub.addEventListener('click', function(event){
             tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 60 ) /100 ).toFixed(2));
         }
         else {
-            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ tripProvValue);
+            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ tripProvValue.toFixed(2));
         }
 
     console.log(tripTotalValue)
 
-    totalDisplay.innerHTML= tripTotalValue
+    totalDisplay.innerHTML= tripTotalValue};
 });
 
 
