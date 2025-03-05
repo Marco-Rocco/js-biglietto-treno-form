@@ -15,6 +15,11 @@ const totalDisplay = document.getElementById('total-display')
 infoSub.addEventListener('click', function(event){
     event.preventDefault();
 
+    while (isNaN(age.value) || isNaN(km.value) || age.value < 1 || age.value > 120) {
+    alert("uno dei dati non è valido, refresha la pagina e inserisci dei dati validi");
+    location.reload;
+    }
+
     console.log('click');
     
     console.log('età del viaggiatore= ' + age.value);
