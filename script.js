@@ -20,20 +20,22 @@ infoSub.addEventListener('click', function(event){
     console.log('kilometri da percorrere= ' + km.value);
 
 
-    let valoreViaggio = (km.value * 0.21 );
-    console.log('il valore provvisorio del viaggio è: ' + valoreViaggio);
+    let tripProvValue = (km.value * 0.21 );
+    console.log('il valore provvisorio del viaggio è: ' + '€' + tripProvValue.toFixed(2));
+
+    let tripTotalValue = ''
 
     if (age.value < 18) {
-    console.log('prezzo finale del biglietto è' + ' ' + '€'+ ((valoreViaggio * 80 ) /100 ).toFixed(2));
-    }
-    else if (age.value > 65) {
-        console.log('prezzo finale del biglietto è' + ' ' + '€'+ ((valoreViaggio * 60 ) /100 ).toFixed(2));
-    }
-    else {
-        console.log('prezzo finale del biglietto è' + ' ' + '€'+ valoreViaggio);
-    }
+            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 80 ) /100 ).toFixed(2));
+        }
+         else if (age.value > 65) {
+            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 60 ) /100 ).toFixed(2));
+        }
+        else {
+            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ tripProvValue);
+        }
 
-
+    console.log(tripTotalValue)
 });
 
 
