@@ -31,10 +31,10 @@ infoSub.addEventListener('click', function(event){
     let tripTotalValue = ''
 
     if (age.value < 18) {
-            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 80 ) /100 ).toFixed(2));
+            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 80 ) /100 ).toFixed(2) + ', hai risparmiato €' + ((tripProvValue * 20 ) /100 ).toFixed(2) );
         }
          else if (age.value > 65) {
-            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 60 ) /100 ).toFixed(2));
+            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 60 ) /100 ).toFixed(2) + ', hai risparmiato €' + ((tripProvValue * 20 ) /100 ).toFixed(2) );
         }
         else {
             tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ tripProvValue.toFixed(2));
