@@ -9,6 +9,7 @@ console.log(km.value);
 const infoSub = document.getElementById('submit');
 console.log(infoSub);
 
+const totalDisplay = document.getElementById('total-display')
 
 
 infoSub.addEventListener('click', function(event){
@@ -36,6 +37,8 @@ infoSub.addEventListener('click', function(event){
         }
 
     console.log(tripTotalValue)
+
+    totalDisplay.innerHTML= tripTotalValue
 });
 
 
