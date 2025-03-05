@@ -12,12 +12,28 @@ console.log(infoSub);
 
 
 infoSub.addEventListener('click', function(event){
-    event.preventDefault;
-    
+    event.preventDefault();
+
     console.log('click');
     
-    console.log(age.value)
-    console.log(km.value);
+    console.log('età del viaggiatore= ' + age.value);
+    console.log('kilometri da percorrere= ' + km.value);
+
+
+    let valoreViaggio = (km.value * 0.21 );
+    console.log('il valore provvisorio del viaggio è: ' + valoreViaggio);
+
+    if (age.value < 18) {
+    console.log('prezzo finale del biglietto è' + ' ' + '€'+ ((valoreViaggio * 80 ) /100 ).toFixed(2));
+    }
+    else if (age.value > 65) {
+        console.log('prezzo finale del biglietto è' + ' ' + '€'+ ((valoreViaggio * 60 ) /100 ).toFixed(2));
+    }
+    else {
+        console.log('prezzo finale del biglietto è' + ' ' + '€'+ valoreViaggio);
+    }
+
+
 });
 
 
