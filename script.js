@@ -29,20 +29,37 @@ infoSub.addEventListener('click', function(event){
     console.log('il valore provvisorio del viaggio è: ' + '€' + tripProvValue.toFixed(2));
 
     let tripTotalValue = ''
+    let tripDiscount = ''
+    let messageToUser = ''
 
     if (age.value < 18) {
-            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 80 ) /100 ).toFixed(2) + ', hai risparmiato €' + ((tripProvValue * 20 ) /100 ).toFixed(2) );
+            tripTotalValue = (((tripProvValue * 80 ) /100 ).toFixed(2));
+            console.log(`il valore finale del viaggio è €${tripTotalValue}`);
+
+            tripDiscount = (((tripProvValue * 20 ) /100 ).toFixed(2));
+            console.log(`il valore risparmiato è €${tripDiscount}`);
+
+            messageToUser = (`il prezzo totale del viaggio è € ${tripTotalValue}, hai risparmiato € ${tripDiscount}`)
+
         }
          else if (age.value > 65) {
-            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ ((tripProvValue * 60 ) /100 ).toFixed(2) + ', hai risparmiato €' + ((tripProvValue * 20 ) /100 ).toFixed(2) );
+            tripTotalValue = (((tripProvValue * 60 ) /100 ).toFixed(2));
+            console.log(`il valore finale del viaggio è €${tripTotalValue}`);
+
+            tripDiscount = (((tripProvValue * 40 ) /100 ).toFixed(2));
+            console.log(`il valore risparmiato è €${tripDiscount}`);
+            messageToUser = (`il prezzo totale del viaggio è € ${tripTotalValue}, hai risparmiato € ${tripDiscount}`)
         }
         else {
-            tripTotalValue = ('prezzo finale del biglietto è' + ' ' + '€'+ tripProvValue.toFixed(2));
+            tripTotalValue = tripProvValue;
+            console.log(`il valore finale del viaggio è ${tripTotalValue}`);
+
+            messageToUser = (`il prezzo totale del viaggio è € ${tripTotalValue}`)
+
+
         }
 
-    console.log(tripTotalValue)
-
-    totalDisplay.innerHTML= tripTotalValue};
+    totalDisplay.innerHTML= messageToUser};
 });
 
 
