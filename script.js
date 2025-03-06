@@ -1,33 +1,43 @@
+//colleghiamo le parti di html a js con "getElemntById"
+
+//age input
 const age = document.getElementById('age-input');
 console.log(age);
 console.log(age.value);
 
+//km input
 const km = document.getElementById('km-input');
 console.log(km);
 console.log(km.value);
 
+//submit button
 const infoSub = document.getElementById('submit');
 console.log(infoSub);
 
+//ho creato un div vuoto per ospitare un messaggio in pagina per l'utente
 const totalDisplay = document.getElementById('total-display')
 
-
+//creo una funzione per inviare i dati inseriti dall'utente dopo aver cliccato submit
 infoSub.addEventListener('click', function(event){
     event.preventDefault();
 
+    //questa condizione non permette allo user di inviare dati non validi
     if (isNaN(age.value) || isNaN(km.value) || age.value < 1 || age.value > 120) {
     alert("uno dei dati non è valido, refresha la pagina e inserisci dei dati validi");
     } else {
 
+    //stampo "cick" in concole per verificare il funzionamento del mio tasto submit
     console.log('click');
     
+    // stampo in console il valore inserito dall'utente nell'input
     console.log('età del viaggiatore= ' + age.value);
     console.log('kilometri da percorrere= ' + km.value);
 
-
+    // assegno un valore per kilometro
     let tripProvValue = (km.value * 0.21 );
     console.log('il valore provvisorio del viaggio è: ' + '€' + tripProvValue.toFixed(2));
 
+    //creo delle variabili vuote, così da riempirle dopo in base alla condizione presentata
     let tripTotalValue = ''
     let tripDiscount = ''
     let messageToUser = ''
@@ -59,43 +69,7 @@ infoSub.addEventListener('click', function(event){
 
         }
 
+    //inserisco il contenuto di "messageToUser" nel div che ho creato precedentemente
     totalDisplay.innerHTML= messageToUser};
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // creiamo un prompt per chiedere all'utente quanti chilometri percorrerà
-// const domandaKm =  ("Ciao, quanti chilometri (km) percorrerà il tuo treno? ");
-// console.log('km=' + domandaKm);
-
-// // ora, assegnamo un valore ad ogni chilometro percorso, così da avere un valore del viaggio iniziale
-// let valoreViaggio = (domandaKm * 0.21 );
-// console.log('Il valore iniziale del viaggio è' + ' ' + '€' + (valoreViaggio.toFixed(2)));
-
-
-// // creiamo un altro  prompt per chiedere l'età del viaggiatore
-// const domandaEta = ("specifica la tua età in valore numerale, per favore");
-// console.log("l'età del passeggero è" + ' ' + domandaEta + ' ' + "anni");
-
-// // creiamo una condizione di esistente tra due fasce di età
-// if (domandaEta < 18) {
-//     alert ('prezzo finale del biglietto è' + ' ' + '€'+ ((valoreViaggio * 80 ) /100 ).toFixed(2));
-// }
-//  else if (domandaEta > 65) {
-//     alert ('prezzo finale del biglietto è' + ' ' + '€'+ ((valoreViaggio * 60 ) /100 ).toFixed(2));
-// }
-// else {
-//     alert ('prezzo finale del biglietto è' + ' ' + '€'+ valoreViaggio);
-// }
